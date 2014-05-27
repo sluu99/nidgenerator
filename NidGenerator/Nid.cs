@@ -38,7 +38,7 @@ namespace NidGenerator
             lock (this.padLock)
             {
                 // put sequence condition first to make sure it's short circuited
-                while (sequence > SequenceMax && GetTimestamp() == this.lastTimestamp)
+                while (this.sequence > SequenceMax && GetTimestamp() == this.lastTimestamp)
                 {
                 }
 
@@ -47,7 +47,7 @@ namespace NidGenerator
                 if (timestamp != this.lastTimestamp)
                 {
                     this.sequence = 0;
-                    lastTimestamp = timestamp;
+                    this.lastTimestamp = timestamp;
                 }
                 else
                 {
