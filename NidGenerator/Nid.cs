@@ -27,35 +27,40 @@ namespace NidGenerator
             this.epochOffset = (ulong)(DateTime.UtcNow - currentUtc).TotalMilliseconds;
         }
 
-        private uint instanceId;
+        private ulong instanceId;
         private ulong epochOffset;
         private ulong lastTimestamp;
         private uint sequence;
         private object padLock;
-
+        
         public long NextId()
         {
             lock (this.padLock)
             {
                 // put sequence condition first to make sure it's short circuited
-                while (this.sequence > SequenceMax && GetTimestamp() == this.lastTimestamp)
+                while (this.sequence >= SequenceMax && GetTimestamp() == this.lastTimestamp)
                 {
+                    // spin until the timestamp changes
                 }
 
                 ulong timestamp = GetTimestamp();
 
-                if (timestamp != this.lastTimestamp)
+                if (timestamp > this.lastTimestamp)
                 {
                     this.sequence = 0;
                     this.lastTimestamp = timestamp;
                 }
-                else
+                else if (timestamp == this.lastTimestamp)
                 {
                     this.sequence++;
                 }
+                else
+                {
+                    throw new ApplicationException(string.Format("timestamp ({0}) < lastTimestmap ({1})", timestamp, this.lastTimestamp));
+                }
 
                 ulong id = timestamp << 10;
-                id |= instanceId;
+                id |= this.instanceId;
                 id <<= 12;
                 id |= this.sequence;
 
