@@ -1,10 +1,10 @@
 NidGenerator
 ============
 
-A simpler version of Twitter's Snowflake ID generator which allows IDs to be generated locally instead of making a remote call.
+A simpler version of Twitter's [Snowflake] (https://github.com/twitter/snowflake) ID generator which allows IDs to be generated locally instead of making a remote call.
 
 The ID generator constructor takes in an instance ID and a timestamp.
-The timestamp can be used to make sure that all the instances have the same source of time (i.e. using the NTicket timestamp).
+The timestamp can be used to make sure that all the instances have the same source of time (i.e. using the [NTicket](https://github.com/sluu99/nticket) timestamp).
 
 Each ID is made of 63 bits:
 
