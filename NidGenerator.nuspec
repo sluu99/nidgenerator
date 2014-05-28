@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>NidGenerator</id>
+    <version>1.0.0</version>
+    <authors>Steven Luu</authors>
+    <owners>Steven Luu</owners>
+    <projectUrl>http://github.com/sluu99/nidgenerator</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simpler version of Twitter's Snowflake ID generator which allows IDs to be generated locally instead of making a remote call.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright Steven Luu 2014</copyright>
+    <tags>NidGenerator, Nid</tags>    
+  </metadata>
+  <files>
+	<file src="NidGenerator\bin\net40\NidGenerator.dll" target="lib\net40" />
+	<file src="NidGenerator\bin\net45\NidGenerator.dll" target="lib\net45" />
+  </files>
+</package>
