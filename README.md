@@ -8,6 +8,6 @@ The timestamp can be used to make sure that all the instances have the same sour
 
 Each ID is made of 63 bits:
 
-- 41 bits timestamp at millisecond precision (custom epoch us 2014-01-01 UTC)
+- 41 bits timestamp at millisecond precision (the custom epoch is 2014-01-01 UTC)
 - 10 bits instance ID
 - 12 bits sequence ID
