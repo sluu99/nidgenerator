@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>NidGenerator</id>
-    <version>1.0.0</version>
+    <version>$version$</version>
     <authors>Steven Luu</authors>
     <owners>Steven Luu</owners>
     <projectUrl>http://github.com/sluu99/nidgenerator</projectUrl>
@@ -12,8 +12,4 @@
     <copyright>Copyright Steven Luu 2014</copyright>
     <tags>NidGenerator, Nid</tags>    
   </metadata>
-  <files>
-	<file src="NidGenerator\bin\net40\NidGenerator.dll" target="lib\net40" />
-	<file src="NidGenerator\bin\net45\NidGenerator.dll" target="lib\net45" />
-  </files>
 </package>
